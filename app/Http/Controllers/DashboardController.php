@@ -146,7 +146,7 @@ class DashboardController extends Controller
         return response()->json(['message' => "l'opération d'annulation a été effectuée avec succès,Vous pouvez de nouveau ajouter des approvisionnements et des ventes." ]) ;
     }
 
-    public function dates(){
+    public function datesInventaire(){
         $dates = Inventaire::select('created_at')->distinct()->get()->all() ;
         $calebasse = array_map(function($date){
             $carbone_date = new Carbon($date->created_at) ;
